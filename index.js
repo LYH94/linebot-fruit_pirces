@@ -52,7 +52,7 @@ bot.on('message', async event => {
     for (const $ of data) {
       for (let j = 0; j < $('#vege_chart').length; j++) {
         // 取得價格
-        const prices = ($('table').eq(j).text().trim())
+        const prices = ($('table').eq(j).text().trim().replace(/\s+/g, ''))
         // 取種類名稱
         let name = ($('h4').eq(j).text().replace(/\s+/g, ''))
         name = name.replace(/推薦No:\d+/g, '')
